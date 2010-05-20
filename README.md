@@ -12,7 +12,7 @@ input parameters and `expand`ed and EC2's (terrible) xml output is
 Some simple examples:
 
     # Input
-    { "InstanceId" : ["i-123k2h1", "i-0234d3"] }
+    { InstanceId: ["i-123k2h1", "i-0234d3"] }
 
 is `expand`ed to:
 
@@ -59,7 +59,7 @@ Use
     })
 
     # Describe specific instances
-    var query = { "InstanceId" : ["i-38hdk2f", "i-93nndch"] }
+    var query = { InstanceId: ["i-38hdk2f", "i-93nndch"] }
     ec2.call("DescribeInstances", query, function(result) {
       var instances = result.reservationSet[0].instancesSet
       ...
